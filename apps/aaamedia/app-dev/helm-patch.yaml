@@ -6,8 +6,8 @@ metadata:
 spec:
   values:
     mcms:
-      enabled: true  # Überschreibe spezifische Werte
+      enabled: false  # Überschreibe spezifische Werte
     frontend:
-      enabled: true
-    keycloak:
       enabled: false
+    keycloak:
+      enabled: true
