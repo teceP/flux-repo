@@ -1,0 +1,33 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: tecep-repo
+  namespace: flux-system
+spec:
+  interval: 1h
+  url: https://tecep.github.io/helm-charts
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: aaamedia
+  namespace: app-env
+spec:
+  interval: 5m
+  chart:
+    spec:
+      chart: aaamedia
+      version: "0.1.0"
+      sourceRef:
+        kind: HelmRepository
+        name: tecep-repo
+        namespace: flux-system
+      interval: 5m
+  values:
+    mcms:
+      enabled: false
+    frontend:
+      enabled: false
+    keycloak:
+      enabled: false

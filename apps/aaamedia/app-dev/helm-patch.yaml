@@ -1,0 +1,13 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: aaamedia
+  namespace: app-dev # Überschreibt den Namespace
+spec:
+  values:
+    mcms:
+      enabled: true  # Überschreibe spezifische Werte
+    frontend:
+      enabled: true
+    keycloak:
+      enabled: false
