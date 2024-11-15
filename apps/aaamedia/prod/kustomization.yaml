@@ -4,5 +4,6 @@ namespace: app-prod
 resources:
   - ../../base/podinfo
 patchesStrategicMerge:
-  - podinfo-patch.yaml
-  - namespace-patch.yaml
+  - path: podinfo-values.yaml
+    target:
+      kind: HelmRelease
