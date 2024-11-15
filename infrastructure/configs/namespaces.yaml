@@ -1,0 +1,21 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app-dev
+  labels:
+    toolkit.fluxcd.io/tenant: dev-team
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app-stage
+  labels:
+    toolkit.fluxcd.io/tenant: dev-team
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: app-prod
+  labels:
+    toolkit.fluxcd.io/tenant: prod-team
