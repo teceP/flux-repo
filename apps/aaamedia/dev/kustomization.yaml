@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: dev
 resources:
   - ../../base/podinfo
-patchesStrategicMerge:
+patches:
   - path: podinfo-values.yaml
     target:
       kind: HelmRelease
